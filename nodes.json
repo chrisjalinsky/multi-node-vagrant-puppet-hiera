@@ -1,0 +1,22 @@
+{
+  "nodes": {
+    "puppet1.dev1.rowdy.cc": {
+      ":ip": "192.168.32.5",
+      "ports": [],
+      ":memory": 2048,
+      ":bootstrap": "bootstrap-master.sh"
+    },
+    "agent1.dev1.rowdy.cc": {
+      ":ip": "192.168.32.10",
+      "ports": [],
+      ":memory": 2048,
+      ":bootstrap": "bootstrap-node.sh"
+    },
+    "core1.dev1.rowdy.cc": {
+      ":ip": "192.168.32.15",
+      "ports": [],
+      ":memory": 2048,
+      ":bootstrap": "bootstrap-node.sh"
+    }
+  }
+}

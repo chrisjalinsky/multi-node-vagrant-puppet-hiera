@@ -1,0 +1,4 @@
+---
+classes:
+ - apt
+ntp::package_ensure: present
