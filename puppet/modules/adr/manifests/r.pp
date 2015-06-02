@@ -1,5 +1,5 @@
 class adr::r (
-  $r_version = '3.0.2',
+  $r_version = '>=3.2.0',
   $comment = 'This is the apt repository for R - the language for statistical computing',
   $location = 'http://cran.rstudio.com/bin/linux/ubuntu/',
   $release = 'trusty/',
@@ -21,21 +21,22 @@ class adr::r (
     }
   }
   
-  exec { 'apt-get update':
-    command => '/usr/bin/apt-get update'
+  exec { 'apt-get-update':
+    command => '/usr/bin/apt-get update',
   }
   
   package {'r-base':
     require => Apt::Source['R'],
-    ensure => installed
+    ensure  => installed,
+    notify  => Exec['apt-get-update']
   }
   
   package {'littler':
-    ensure => latest
+    ensure => latest,
   }
   
   package {'libmysqlclient-dev':
-    ensure => latest
+    ensure => latest,
   }
   
   adr::package{'forecast': dependencies => true}
