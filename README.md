@@ -1,20 +1,21 @@
 ## Vagrant Multiple-VM Creation and Configuration
 Automatically provision multiple VMs with Vagrant and VirtualBox. Automatically install, configure, and test
 Puppet Master and Puppet Agents on those VMs. Credit and additional help can be found here:
-[http://wp.me/p1RD28-1kX](http://wp.me/p1RD28-1kX)
+[http://wp.me/p1RD28-1kX](http://wp.me/p1RD28-1kX)  
+Special thanks to Gary A. Stafford for his blog post.  
  
 #### Quickstart 
 vagrant up 
- 
-vagrant ssh agent1.dev1.rowdy.cc 
-sudo puppet agent --test --waitforcert=60 
- 
+  
+vagrant ssh agent1.dev1.rowdy.cc  
+sudo puppet agent --test --waitforcert=60  
+  
 vagrant ssh core1.dev1.rowdy.cc 
-sudo puppet agent --test --waitforcert=60 
- 
-vagrant ssh puppet1.dev1.rowdy.cc 
-sudo puppet cert sign --all 
- 
+sudo puppet agent --test --waitforcert=60  
+  
+vagrant ssh puppet1.dev1.rowdy.cc  
+sudo puppet cert sign --all  
+  
 #### JSON Configuration File
 The Vagrantfile retrieves multiple VM configurations from a separate `nodes.json` file. All VM configuration is
 contained in the JSON file. You can add additional VMs to the JSON file, following the existing pattern. The
